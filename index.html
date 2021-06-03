@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Streamersonglist.com Overlay</title>
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Current title -->
+        <div id="current" class="animate__animated animate__slideOutLeft">
+            <div id="current-inner" class="box">
+                <span id="current-artist"></span>
+                <span id="current-title"></span>
+            </div>
+        </div>
+
+        <!-- Request queue -->
+        <div id="queue" class="box animate__animated"></div>
+
+        <!-- Top10 -->
+        <div id="top" class="box"></div>
+
+        <!-- Available songs -->
+        <div id="songs" class="box"></div>
+
+        <script src="//unpkg.com/twitch-js@2.0.0-beta.33/dist/twitch.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

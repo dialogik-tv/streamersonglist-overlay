@@ -1,0 +1,159 @@
+/* @font-face {
+    font-family: 'Headliner';
+    src: url('../fonts/Headliner.ttf');
+} */
+
+/* Reset CSS */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 48px;
+    line-height: normal;
+}
+
+body {
+    background: #000;
+    color: #eee;
+    /* font-family: 'Headliner', Helvetica, Arial, sans-serif; */
+    font-family: Helvetica, Arial, sans-serif;
+    /* background-image: url(../img/background.png); */
+    background-size: cover;
+}
+
+.box {
+    background: #33333388;
+}
+
+/* QUEUE, CURRENT TITLE AND TOP 10 */
+#current-inner, #queue {
+    position: fixed;
+    height: 277px;
+    width: 442px;
+}
+
+#current-inner {
+    padding: 14px 30px 16px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    left: 16px;
+    top: 145px;
+}
+
+#current-artist {
+    font-size: .9rem;
+}
+
+#current-title {
+    font-size: 1.3rem;
+}
+
+#queue {
+    padding: 16px 20px;
+    overflow: hidden;
+    left: 24px;
+    top: 153px;
+}
+
+#top {
+    position: fixed;
+    right: 24px;
+    top: 153px;
+    width: 442px;
+    padding: 16px 20px;
+    overflow: hidden;
+}
+
+#queue > ul, #top > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#queue > ul > li, #top > ul > li {
+    margin-bottom: 10px;
+    line-height: 22px;
+    display: grid;
+    grid-template-columns: 38% 38% 24%;
+}
+
+#top > ul > li {
+    margin-bottom: 16px;
+    grid-template-columns: 41% 41% 18%;
+}
+
+.queue-artist, .top-artist {
+    color: rgb(0, 213, 241);
+}
+
+.queue-artist, .queue-title,
+.top-artist, .top-title {
+    font-size: .35rem;
+}
+
+.queue-requester {
+    color: #a0a0a0;
+    font-size: .3rem;
+}
+
+.top-times-played {
+    font-size: .6rem;
+    color: rgb(0, 213, 241);
+    text-align: right;
+}
+
+/* AVAILABLE SONGS */
+#songs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+}
+
+#songs > ul {
+    margin: 0;
+    padding-left: 14px;
+}
+
+#songs > ul > li {
+    display: inline-block;
+    margin-right: 42px;
+    position: relative;
+    top: -7px;
+}
+
+.song-artist {
+    color: #a0a0a0;
+    font-size: .4rem;
+}
+
+.song-title {
+    color: #fff;
+    font-size: .45rem;
+}
+
+/* Songs ticker like animation */
+#songs {
+    overflow-x: hidden;
+    padding-left: 100%; /* Push contents to right side of screen */
+}
+  
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+#songs > ul {
+    /* Basically move items from right side of screen to left in infinite loop */
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker;
+    animation-duration: 60s;
+  }
