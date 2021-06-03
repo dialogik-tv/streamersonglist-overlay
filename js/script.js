@@ -58,7 +58,7 @@
             setTimeout(() => {
                 topHolder.classList.remove('animate__slideInRight');
                 topHolder.classList.add('animate__slideOutRight');
-            }, 10*1000);
+            }, 30*1000);
         }
         
         // Show songs
@@ -72,7 +72,7 @@
             setTimeout(() => {
                 songsHolder.classList.remove('animate__slideInUp');
                 songsHolder.classList.add('animate__slideOutDown');
-            }, 10*1000);
+            }, 30*1000);
         }
         
         
