@@ -46,6 +46,36 @@
                 queueHolder.classList.add('animate__slideInLeft');
             }, 5*1000);
         }
+        
+        // Show top 10
+        if(message.message.startsWith('!top10')) {
+            const topHolder = document.getElementById('top');
+
+            // Hide queue, show current title
+            topHolder.classList.remove('animate__slideOutRight');
+            topHolder.classList.add('animate__slideInRight');
+            // Hide after 10 seconds
+            setTimeout(() => {
+                topHolder.classList.remove('animate__slideInRight');
+                topHolder.classList.add('animate__slideOutRight');
+            }, 10*1000);
+        }
+        
+        // Show songs
+        if(message.message.startsWith('!songs')) {
+            const songsHolder = document.getElementById('songs');
+
+            // Hide queue, show current title
+            songsHolder.classList.remove('animate__slideOutDown');
+            songsHolder.classList.add('animate__slideInUp');
+            // Hide after 10 seconds
+            setTimeout(() => {
+                songsHolder.classList.remove('animate__slideInUp');
+                songsHolder.classList.add('animate__slideOutDown');
+            }, 10*1000);
+        }
+        
+        
     };
 
     // Listen for all events.
