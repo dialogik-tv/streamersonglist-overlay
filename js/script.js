@@ -160,18 +160,18 @@ function setQueue(queue) {
         let html = '';
         if(queueItem.song != null && typeof queueItem.song == 'object') {
             html = `<li>
-                            <span class="queue-artist">${queueItem.song.artist}</span>
-                            <span class="queue-title">${queueItem.song.title}</span>
-                            <span class="queue-requester">${queueItem.requests[0]?.name}</span>
-                        </li>`;
+                        <span class="queue-artist">${queueItem.song.artist}</span>
+                        <span class="queue-title">${queueItem.song.title}</span>
+                        <span class="queue-requester">${queueItem.requests[0].name}</span>
+                    </li>`;
                         
         } else {
             if(queueItem.nonlistSong != null) {
                 html = `<li>
-                                <span class="queue-artist"></span>
-                                <span class="queue-title">${queueItem.nonlistSong}</span>
-                                <span class="queue-requester">${queueItem.requests[0]?.name}</span>
-                            </li>`;
+                            <span class="queue-artist"></span>
+                            <span class="queue-title">${queueItem.nonlistSong}</span>
+                            <span class="queue-requester">${queueItem.requests[0].name}</span>
+                        </li>`;
             }
         }
         list.innerHTML += html;
